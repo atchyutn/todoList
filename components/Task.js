@@ -5,7 +5,7 @@ const Task = (props) => {
   return (
     <View style={styles.item}>
       <View style={styles.itemLeft}>
-        <TouchableOpacity style={styles.markDoneBtn}></TouchableOpacity>
+        <View style={styles.markDoneBtn}></View>
         <Text style={styles.itemText}>{props.text}</Text>
       </View>
       <View style={styles.circle}></View>
@@ -38,10 +38,16 @@ const styles = StyleSheet.create({
     opacity: 0.4
   },
   itemText: {
-    paddingLeft: 20
+    paddingLeft: 20,
+    maxWidth: '80%',
+    fontSize: 20
   },
   circle: {
-
+    borderColor: 'black',
+    width: 12,
+    height: 12,
+    borderWidth: 2,
+    borderRadius: 5
   },
 });
 export default Task;
