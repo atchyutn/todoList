@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import AddTask from './AddTask';
 
 const Task = (props) => {
@@ -12,10 +12,11 @@ const Task = (props) => {
         </View>
         <View style={styles.circle}></View>
       </View>
-      <View style={styles.addTask}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? "padding" : "height"} style={styles.addTask}>
         {/* Add new task */ }
         <AddTask></AddTask>
-      </View>
+      </KeyboardAvoidingView>
     </View>
   );
 };

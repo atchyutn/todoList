@@ -4,7 +4,7 @@ import { KeyboardAvoidingView } from 'react-native';
 
 const AddTask = () => {
   return (
-    <KeyboardAvoidingView
+    <View
       behavior={Platform.OS === 'ios' ? "padding" : "height"}
       style={styles.textInputWrapper}
     >
@@ -15,11 +15,11 @@ const AddTask = () => {
       <TouchableOpacity>
         <View style={styles.addBtnWrapper}>
           <Text style={styles.addBtn}>
-            >
+            +
           </Text>
         </View>
       </TouchableOpacity>
-    </KeyboardAvoidingView>
+    </View>
   )
 };
 
