@@ -1,8 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, StyleSheet, KeyboardAvoidingView } from 'react-native';
 import AddTask from './AddTask';
 
+
 const Task = (props) => {
+  const [tasks, setTasks] = useState([])
+  handleCallback = (childData) => {
+    setTasks({ childData });
+  }
   return (
     <View style={styles.mainContainer}>
       <View style={styles.item}>
@@ -15,7 +20,7 @@ const Task = (props) => {
       <KeyboardAvoidingView
         behavior={Platform.OS === 'ios' ? "padding" : "height"} style={styles.addTask}>
         {/* Add new task */ }
-        <AddTask></AddTask>
+        <AddTask parentCallback={this.handleCallback}></AddTask>
       </KeyboardAvoidingView>
     </View>
   );
